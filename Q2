@@ -1,0 +1,37 @@
+#include<bits/stdc++.h>
+using namespace std;
+bool c(student const & a, student const & b)
+{
+    return a.rno < b.rno;
+}
+class student{
+  int rno,marks;
+  string name;
+  public:
+  void set_data(int rno,int marks,string name){
+      this->rno = rno;
+      this->marks = marks;
+      this->name = name;
+  }
+  void get_data(){
+      cout<<"Roll Number: "<<this->rno<<" Name: "<<this->name<<" Marks: "<<this->marks;
+  }
+  
+  
+};
+void sort_data(vector<student> s){
+    sort(s.begin(),s.end(),c);
+}
+int main(){
+   student s1;
+   vector<student> s;
+   for(int i = 0;i < 2;i++){
+        int rno,marks;
+        string name;
+        cin>>rno>>marks;
+        cin>>name;
+        s1.set_data(rno,marks,name);
+        s.push_back(s1);
+   }
+   sort_data(s);
+}
