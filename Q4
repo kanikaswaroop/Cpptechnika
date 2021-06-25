@@ -1,0 +1,91 @@
+shallow copy:
+
+
+#include <iostream>
+using namespace std;
+  class student {
+private:
+    int rollno;
+    string name;
+  public:
+    void set_info(int id, string Name1)
+    {
+        
+        rollno = id;
+        name = Name1;
+    }
+    void display()
+    {
+        cout << " roll no. = " << rollno<<endl;
+        cout<<"name ="<<name<<endl
+    }
+};
+  
+int main()
+{
+  student s1, s2;
+    s1.set_info(1,"kanika");
+    s1.display();
+  
+   s2= s1;
+    s2.display();
+    return 0;
+}
+
+b. deep copy
+
+#include <iostream>
+using namespace std;
+  
+class student {
+private:
+    int *rollno;
+    string name;
+  
+public:
+    student()
+    {
+        rollno = new int;
+    }
+  
+    
+    void set_info(int id, string name1)
+    {
+        *rollno = id;
+        name = name1;
+        
+    }
+  
+    void display()
+    {
+        cout<<" Rollno = "<<*rollno<<endl;
+        cout<< "\n Name = "<<name<<endl;
+             
+    }
+  
+    
+    student(student& test)
+    {
+        name= test.name;
+        rollno = new int;
+        *rollno = *(test.rollno);
+    }
+  
+    ~student()
+    {
+        delete rollno;
+    }
+};
+  
+int main()
+{
+    student s1;
+  
+    s1.set_info(1,"kanika");
+    s1.display();
+ 
+    student s2 = s1;
+    s2.display();
+  
+    return 0;
+}
