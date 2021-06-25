@@ -1,0 +1,53 @@
+#include <iostream>
+using namespace std;
+/*Design 3 classes called A,B,C then implement read() 
+and get() functions as non- member functions and scan and 
+print 
+the data for three class with the help of friend functions*/
+class A{
+    int a;
+    public:
+    friend void aread(A a, int data);
+    friend void aget(A a);
+}
+class B{
+    int b;
+    public:
+    friend void bread(B b, int data);
+    friend void aget(B a);
+}
+class C{
+    int c;
+    public:
+    friend void cread(C c, int data);
+    friend void aget(C a);
+}
+void aread(A a,int data){
+    a.data = data;
+}
+void bread(B a,int data){
+    a.data = data;
+}
+void cread(C a,int data){
+    a.data = data;
+}
+void aget(A a){
+    cout<<a.data;
+}
+void aget(B a){
+    cout<<a.data;
+}
+void aget(C a){
+    cout<<a.data;
+}
+int main() {
+	A a;
+	B b;
+	C c;
+	aread(a,2);
+	bread(b,3);
+	cread(c,4);
+	aget(a);
+	aget(b);
+	aget(c);	
+}
