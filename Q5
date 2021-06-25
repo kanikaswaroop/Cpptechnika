@@ -1,0 +1,36 @@
+#include<iostream>
+using namespace std;
+void swap(int &x,int &y)
+{
+int temp;
+temp=x;
+x=y;
+y=temp;
+}
+void swap(float &x, float &y)
+{
+float temp;
+temp=x;
+x=y;
+y=temp;
+}
+int main(){
+int x,y;
+float x1,y1;
+
+cout<<"Enter 2 integers- "<<endl;
+cin>>x>>y;
+cout<<"Enter 2 floating point numbers- "<<endl;
+cin>>x1>>y1;
+cout<<"before swapping integers"<<" "<<"x-"<<x<<" "<<"y-"<<y<<endl;
+cout<<"before swapping floating numbers"<<" "<<"x1- "<<x1<<" "<<"y1- "<<y1<<endl;
+swap(x,y);
+swap(x1,y1);
+cout<<"After swapping intergers"<<" ";
+cout<<"x- "<<x<<" "<<"y- "<<y<<endl;
+cout<<"before swapping floating numbers"<<" "<<"x1- "<<x1<<" "<<"y1- "<<y1;
+cout<<"After swapping floating num,"<<" ";
+cout<<"x1="<<x1<<" "<<"y1="<<y1<<endl;
+return 0;
+
+}
